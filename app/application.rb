@@ -16,6 +16,7 @@ class Application
       resp.write handle_search(search_term)
     elsif req.path.match(/add/)
       new_item = req.params['item']
+      @@items.include?(new_item.capitalize)
     elsif req.path.match(/cart/)
       @@cart.each do |item|
         resp.write "#{item}\n"
