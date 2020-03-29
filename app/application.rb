@@ -22,6 +22,7 @@ class Application
       # if it's in the items list then add it to the cart
       if @@items.include?(new_item.capitalize)
         @@cart << new_item.capitalize
+        resp.write "#{item} was added to cart!"
       else
         resp.write "#{item} is not included in our inventory"
       end
