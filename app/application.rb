@@ -24,7 +24,7 @@ class Application
         @@cart << new_item.capitalize
         resp.write "added #{new_item.capitalize}"
       else
-        resp.write "#{new_item.capitalize} is not included in our inventory"
+        resp.write ""
       end
 
     elsif req.path.match(/cart/)
