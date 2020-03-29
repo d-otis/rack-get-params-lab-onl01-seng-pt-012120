@@ -15,7 +15,7 @@ class Application
       search_term = req.params["q"]
       resp.write handle_search(search_term)
     elsif req.path.match(/add/)
-      resp.write "This is the ADD page"
+      resp.write "This is the ADD page\n"
     elsif req.path.match(/cart/)
       @@cart.each do |item|
         resp.write "#{item}\n"
