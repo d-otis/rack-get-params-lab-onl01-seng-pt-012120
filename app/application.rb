@@ -22,9 +22,6 @@ class Application
       # if it's in the items list then add it to the cart
 
     elsif req.path.match(/cart/)
-      @@cart.each do |item|
-        resp.write "#{item}\n"
-      end
       @@cart.each {|item| resp.write "{item}\n"}
     else
       resp.write "Path Not Found"
