@@ -20,7 +20,10 @@ class Application
       new_item = req.params['item']
       resp.write "#{@@items.include?(new_item.capitalize)}"
       # if it's in the items list then add it to the cart
-      @@items.include?(new_item.capitalize) ? @@cart << new_item.capitalize : resp.write "#{item} is not included in our inventory"
+      if @@items.include?(new_item.capitalize)
+        @@cart << new_item.capitalize
+      else
+        resp.write "#{item} is not included in our inventory"
 
     elsif req.path.match(/cart/)
       @@cart.empty? ? resp.write "Your cart is empty" : @@cart.each {|item| resp.write "{item}\n"}
