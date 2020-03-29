@@ -14,9 +14,13 @@ class Application
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
+      
+
     elsif req.path.match(/add/)
       new_item = req.params['item']
       resp.write "#{@@items.include?(new_item.capitalize)}"
+
+
     elsif req.path.match(/cart/)
       @@cart.each do |item|
         resp.write "#{item}\n"
