@@ -18,7 +18,7 @@ class Application
 
     elsif req.path.match(/add/)
       new_item = req.params['item']
-      resp.write "#{@@items.include?(new_item.capitalize)}"
+      # resp.write "#{@@items.include?(new_item.capitalize)}"
       # if it's in the items list then add it to the cart
       if @@items.include?(new_item.capitalize)
         @@cart << new_item.capitalize
