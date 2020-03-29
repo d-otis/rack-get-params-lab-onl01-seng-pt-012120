@@ -20,9 +20,10 @@ class Application
       new_item = req.params['item']
       resp.write "#{@@items.include?(new_item.capitalize)}"
       # if it's in the items list then add it to the cart
+      @@items.include?(new_item.capitalize) ? @@cart << new_item.capitalize
 
     elsif req.path.match(/cart/)
-      @@cart.each {|item| resp.write "{item}\n"} 
+      @@cart.each {|item| resp.write "{item}\n"}
     else
       resp.write "Path Not Found"
     end
