@@ -23,7 +23,7 @@ class Application
       @@items.include?(new_item.capitalize) ? @@cart << new_item.capitalize : resp.write "#{item} is not included in our inventory"
 
     elsif req.path.match(/cart/)
-      @@cart.each {|item| resp.write "{item}\n"}
+    @@cart.empty? ? resp.writes "Your cart is empty" : @@cart.each {|item| resp.write "{item}\n"}
     else
       resp.write "Path Not Found"
     end
