@@ -24,6 +24,7 @@ class Application
         @@cart << new_item.capitalize
       else
         resp.write "#{item} is not included in our inventory"
+      end
 
     elsif req.path.match(/cart/)
       # @@cart.empty? ? resp.write "Your cart is empty" : @@cart.each {|item| resp.write "{item}\n"}
